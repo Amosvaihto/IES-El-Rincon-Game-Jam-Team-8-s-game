@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "prueba.sln"
+    "dotnet.defaultSolution": "IES-El-Rincon-Game-Jam-Team-8-s-game.sln"
 }
