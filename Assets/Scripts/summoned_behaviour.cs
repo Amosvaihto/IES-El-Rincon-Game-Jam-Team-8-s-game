@@ -14,7 +14,6 @@ public class summoned_behaivour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        projectilePrefab.GetComponent<projectile_behaviour>().projectileSpeed = projectileSpeed;
     }
 
     // Update is called once per frame
