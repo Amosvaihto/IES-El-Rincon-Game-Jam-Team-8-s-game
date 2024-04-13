@@ -5,7 +5,6 @@ using UnityEngine;
 public class projectile_behaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
-
     public float projectileSpeed = 2f;
 
     void Awake(){

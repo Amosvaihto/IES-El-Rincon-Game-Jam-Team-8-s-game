@@ -8,6 +8,8 @@ public class summoned_behaivour : MonoBehaviour
     private float timerSpawn = 0f;
     public float respawnTime = 2f;
     public float projectileSpeed = 10f;
+    public float projectileScaleX = 0.2f;
+    public float projectileScaleY = 0.2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class summoned_behaivour : MonoBehaviour
             timerSpawn -= respawnTime;
             GameObject leprojectile = Instantiate(this.projectilePrefab, new Vector3(this.transform.position.x, this.transform.position.y, 0f), Quaternion.identity);
             leprojectile.GetComponent<projectile_behaviour>().projectileSpeed = projectileSpeed;
+            leprojectile.transform.localScale = new Vector3(projectileScaleX, projectileScaleY, 1f);
         }
     }
 }
