@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
 
     public void NewGame()
     {
-       //SceneManager.LoadScene("""""//the game scene""""")
+        SceneManager.LoadScene("Game");
     }
     public void Settings ()
     {
