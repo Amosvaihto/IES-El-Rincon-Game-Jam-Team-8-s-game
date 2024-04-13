@@ -23,7 +23,7 @@ public class EnemyGenerator : MonoBehaviour
         this.timerSpawn += Time.deltaTime;
         if (timerSpawn > respawnTime)
         {
-            timerSpawn = 0;
+            timerSpawn -= respawnTime; //This is so it doesn't lose a few miliseconds every spawn
             Instantiate(this.GetRandomEnemy(), new Vector3(generatePositionX, this.GetRandomPosition(), 0f), Quaternion.identity);
         }
     }
