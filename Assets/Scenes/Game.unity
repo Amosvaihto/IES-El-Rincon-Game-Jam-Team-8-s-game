@@ -425,11 +425,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1095822034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e39dc09d02e3b4188c7013da5e7fed, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e514d5cb8c3cef4ab9fc9f554b0f2e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesLVL1:
-  - {fileID: 6002565151702295468, guid: e756c97ed0dd67e459c9e75b91580a64, type: 3}
+  - {fileID: 6002565151702295468, guid: eb1875c878575734d90bbf60c19b2cec, type: 3}
   respawnTime: 4
 --- !u!1 &1283456941
 GameObject:

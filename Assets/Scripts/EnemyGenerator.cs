@@ -10,7 +10,7 @@ public class EnemyGenerator : MonoBehaviour
     private List<GameObject> enemies = new List<GameObject>();
     public List<GameObject> enemiesLVL1 = new List<GameObject>();
     private float timerSpawn = 0f;
-    public float respawnTime = 4f;
+    public float respawnTime = 0.5f;
 
     void Start()
     {
