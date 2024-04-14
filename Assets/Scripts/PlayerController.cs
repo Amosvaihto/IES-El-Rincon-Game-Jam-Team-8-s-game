@@ -21,10 +21,12 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI selectedCreatureText;
     public TextMeshProUGUI manaText;
     public List<CreatureItemStruct> creatureItems;
+    public float timerPerOneMana = 0f;
+    public float secondsPerOneMana = 0.5f;
 
     private void Start()
     {
-        manaText.text = "Mana: " + mana + "/" + manaMax;
+        UpdateManaText();
     }
 
     void Update()
@@ -35,10 +37,35 @@ public class PlayerController : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(posicionMouse, Vector2.zero, Mathf.Infinity, gridLayer);
             if (hit.collider != null && hit.collider.gameObject.transform.childCount == 0)
             {
-                Transform hitTransform = hit.collider.gameObject.transform;
-                Instantiate(GetCreatureSelected(), new Vector2(hitTransform.position.x, hitTransform.position.y), Quaternion.identity, hitTransform);
+                GameObject hitGameObject = hit.collider.gameObject;
+                GameObject creature = GetCreatureSelected();
+                summonedBehaviour summonedComponent = creature.GetComponent<summonedBehaviour>();
+                if (summonedComponent.manaCost <= mana)
+                {
+                    Transform hitTransform = hitGameObject.transform;
+                    Instantiate(creature, new Vector2(hitTransform.position.x, hitTransform.position.y), Quaternion.identity, hitTransform);
+                    mana -= summonedComponent.manaCost;
+                    UpdateManaText();
+                }
             }
         }
+
+        timerPerOneMana += Time.deltaTime;
+        if (timerPerOneMana > secondsPerOneMana)
+        {
+            mana += 1;
+            if (mana > manaMax)
+            {
+                mana = manaMax;
+            }
+            timerPerOneMana -= secondsPerOneMana;
+            UpdateManaText();
+        }
+    }
+
+    void UpdateManaText()
+    {
+        manaText.text = "Mana: " + mana + "/" + manaMax;
     }
 
     public void ChangeSelectedCreature(string creature)
