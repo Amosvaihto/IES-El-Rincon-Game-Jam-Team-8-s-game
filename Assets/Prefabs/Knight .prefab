@@ -288,8 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1530802950883863572, guid: a37fd34692965824e95cb6009172fcd5, type: 3}
   projectileSpeed: 10
-  projectileSizeX: 0.2
-  projectileSizeY: 0.2
+  projectileSizeX: 0.5
+  projectileSizeY: 0.5
 --- !u!114 &-8891799080958568662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28eaae3921543ef44907bd2a87798f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 34
   timePerHit: 2
   manaCost: 25
   despawnTime: 15
