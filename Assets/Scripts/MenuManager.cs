@@ -19,5 +19,10 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
+    
+    public void Continue() 
+    {
+        SceneManager.LoadScene("Continue");
+    }
 
 }

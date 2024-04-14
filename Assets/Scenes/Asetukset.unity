@@ -604,6 +604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327624c9691516b4d9a9af2e6609169f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resolutionDropdown: {fileID: 0}
 --- !u!4 &360000263
 Transform:
   m_ObjectHideFlags: 0
@@ -1438,7 +1439,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 997586270}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 360000262}
+        m_TargetAssemblyTypeName: AsetuksetScript, Assembly-CSharp
+        m_MethodName: AsetuksetTakaisin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &997586270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2263,9 +2276,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 360000260}
+      - m_Target: {fileID: 360000262}
         m_TargetAssemblyTypeName: AsetuksetScript, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: "\xE4\xE4nislider"
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
