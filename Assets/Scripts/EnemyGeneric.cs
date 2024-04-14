@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,19 +9,21 @@ public class EnemyGeneric : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     public float velocity;
     public float speedMultiplier = 1f;
-    public int HP = 100;
+    private int currentHP;
+    public readonly int maxHP = 100;
     public float debuffSpeed = 0f;
 
     // Start is called before the first frame update
     void Start(){
         this.rigidbody2d = GetComponent<Rigidbody2D>();
+        currentHP = maxHP;
     }
 
     // Update is called once per frame
     void Update(){
         this.rigidbody2d.velocity = Vector3.left * this.velocity * (this.speedMultiplier - debuffSpeed);
         if (this.transform.position.x < GameUtils.basePositionX){
-            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+            SceneManager.LoadScene("Lose", LoadSceneMode.Single);
             Destroy(gameObject);
         }
     }
@@ -31,11 +34,11 @@ public class EnemyGeneric : MonoBehaviour
             projectileBehaviour projectileBehaviourComponent = colliderObject.GetComponent<projectileBehaviour>();
             projectileBehaviourComponent.penetrationCount -= 1;
             debuffSpeed = projectileBehaviourComponent.debuffSpeed;
-            this.HP -= projectileBehaviourComponent.damage;
+            this.currentHP -= projectileBehaviourComponent.damage;
             if(projectileBehaviourComponent.penetrationCount < 0){
                 Destroy(colliderObject);
             }
-            if (HP <= 0){
+            if (currentHP <= 0){
                 Destroy(this.gameObject);
             }
         }
