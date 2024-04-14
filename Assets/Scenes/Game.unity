@@ -1224,6 +1224,8 @@ MonoBehaviour:
   creatureItems:
   - name: bat
     prefab: {fileID: 7318255694221668149, guid: 64bcac1643b9771429c5d1f173a16251, type: 3}
+  timerPerOneMana: 0
+  secondsPerOneMana: 0.5
 --- !u!4 &952183635
 Transform:
   m_ObjectHideFlags: 0

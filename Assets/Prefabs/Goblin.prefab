@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 1727680972031407418}
   - component: {fileID: 6416905893463455330}
   - component: {fileID: 588741167702821855}
+  - component: {fileID: 5291981438341454215}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Untagged
@@ -400,6 +401,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.1942167, y: 8.847286}
   m_EdgeRadius: 0
+--- !u!114 &5291981438341454215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6002565151702295468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6386e3c8e45e23b4fb149a348be1f601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7651618088966330336
 GameObject:
   m_ObjectHideFlags: 0
