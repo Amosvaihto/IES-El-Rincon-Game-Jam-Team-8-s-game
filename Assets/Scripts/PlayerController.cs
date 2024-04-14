@@ -14,10 +14,18 @@ public struct CreatureItemStruct
 public class PlayerController : MonoBehaviour
 {
 
+    public int mana = 100;
+    public int manaMax = 100;
     public LayerMask gridLayer;
     public string selectedCreature = "";
     public TextMeshProUGUI selectedCreatureText;
+    public TextMeshProUGUI manaText;
     public List<CreatureItemStruct> creatureItems;
+
+    private void Start()
+    {
+        manaText.text = "Mana: " + mana + "/" + manaMax;
+    }
 
     void Update()
     {
