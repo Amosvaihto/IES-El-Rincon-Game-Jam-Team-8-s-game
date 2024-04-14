@@ -30,6 +30,7 @@ public class Goblin : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         GameObject colliderObject = other.gameObject;
         if (colliderObject.CompareTag("Projectile")){
+            Debug.Log("Duele vivir");
             this.HP -= colliderObject.GetComponent<projectileBehaviour>().damage;
             Destroy(colliderObject);
             if (HP <= 0){
