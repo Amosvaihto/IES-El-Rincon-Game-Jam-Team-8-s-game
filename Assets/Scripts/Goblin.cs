@@ -6,7 +6,7 @@ using UnityEngine;
 public class Goblin : MonoBehaviour
 {
 
-    Rigidbody2D rigidbody2d;
+    private Rigidbody2D rigidbody2d;
     public float velocity;
 
     public int HP = 100;
@@ -30,7 +30,6 @@ public class Goblin : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         GameObject colliderObject = other.gameObject;
         if (colliderObject.CompareTag("Projectile")){
-            Debug.Log("Duele vivir");
             this.HP -= colliderObject.GetComponent<projectileBehaviour>().damage;
             Destroy(colliderObject);
             if (HP <= 0){

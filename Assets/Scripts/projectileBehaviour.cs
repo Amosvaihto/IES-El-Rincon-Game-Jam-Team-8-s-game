@@ -7,6 +7,7 @@ public class projectileBehaviour : MonoBehaviour
     private Rigidbody2D rb;
     public float projectileSpeed = 2f;
     public int damage = 25;
+    public int penetrationCount = 0;
 
     void Awake(){
         rb = this.gameObject.AddComponent<Rigidbody2D>() as Rigidbody2D;
