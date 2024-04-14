@@ -22,4 +22,8 @@ public class projectile_behaviour : MonoBehaviour
     {
         rb.velocity = new Vector2(projectileSpeed, 0.0f);
     }
+
+    void OnBecameInvisible(){
+        Destroy(gameObject);
+    }
 }
