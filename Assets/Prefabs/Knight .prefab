@@ -305,7 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 34
   timePerHit: 2
-  manaCost: 25
+  manaCost: 35
   despawnTime: 15
 --- !u!1 &4690716665291164420
 GameObject:

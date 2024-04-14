@@ -27,14 +27,14 @@ public class EnemyGeneric : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         GameObject colliderObject = other.gameObject;
         if (colliderObject.CompareTag("Projectile")){
-            colliderObject.GetComponent<projectileBehaviour>().penetrationCount -= 1;
-            this.HP -= colliderObject.GetComponent<projectileBehaviour>().damage;
-            Debug.Log(colliderObject.GetComponent<projectileBehaviour>().penetrationCount);
-            if(colliderObject.GetComponent<projectileBehaviour>().penetrationCount < 0){
+            projectileBehaviour projectileBehaviourComponent = colliderObject.GetComponent<projectileBehaviour>();
+            projectileBehaviourComponent.penetrationCount -= 1;
+            this.HP -= projectileBehaviourComponent.damage;
+            if(projectileBehaviourComponent.penetrationCount < 0){
                 Destroy(colliderObject);
             }
             if (HP <= 0){
-                Destroy(gameObject);
+                Destroy(this.gameObject);
             }
         }
         if (colliderObject.gameObject.CompareTag("summoned")){
