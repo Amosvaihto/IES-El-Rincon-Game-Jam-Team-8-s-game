@@ -103,6 +103,7 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileSizeX: 0.2
   projectileSizeY: 0.2
+  penetrationCount: 0
 --- !u!114 &8422601394292239906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 8
   timePerHit: 0.4
-  manaCost: 15
+  manaCost: 20
   despawnTime: 8
 --- !u!61 &5882377811375484382
 BoxCollider2D:
