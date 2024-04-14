@@ -14,7 +14,7 @@ public class EnemyGenerator : MonoBehaviour
 {
 
     private float generatePositionX = 19.30f;
-    private float[] generatePositionY = { 3.01f, 1.37f, -0.29f, -2.06f };
+    private float[] generatePositionY = { 2.51f, 0.86f, -0.81f, -2.47f };
     private float timerSpawn = 0f;
     private float timerRound = 0f;
     private List<EnemyListStruc> enemies = new List<EnemyListStruc>();
