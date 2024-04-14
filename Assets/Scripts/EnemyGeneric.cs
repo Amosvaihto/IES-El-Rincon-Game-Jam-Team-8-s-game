@@ -5,14 +5,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EnemyGeneric : MonoBehaviour
-{
+{   
+    
     private Rigidbody2D rigidbody2d;
     public float velocity;
     public float speedMultiplier = 1f;
     private int currentHP;
-    public readonly int maxHP = 100;
+    public int maxHP = 100;
     public float debuffSpeed = 0f;
-
     // Start is called before the first frame update
     void Start(){
         this.rigidbody2d = GetComponent<Rigidbody2D>();
