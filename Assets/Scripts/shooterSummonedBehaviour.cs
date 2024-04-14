@@ -13,6 +13,7 @@ public class shooterSummonedBehaviour : MonoBehaviour
     public float projectileSizeX = 0.2f;
     public float projectileSizeY = 0.2f;
     public int penetrationCount = 0;
+    public float debuffSpeed = 0f;
 
     // Start is called before the first frame update
     void Start(){
@@ -31,6 +32,7 @@ public class shooterSummonedBehaviour : MonoBehaviour
             leprojectile.GetComponent<projectileBehaviour>().damage = damage;
             leprojectile.transform.localScale = new Vector3(projectileSizeX, projectileSizeY, 1f);
             leprojectile.GetComponent<projectileBehaviour>().penetrationCount = penetrationCount;
+            leprojectile.GetComponent<projectileBehaviour>().debuffSpeed = debuffSpeed;
         }
 
 

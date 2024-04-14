@@ -9,6 +9,7 @@ public class EnemyGeneric : MonoBehaviour
     public float velocity;
     public float speedMultiplier = 1f;
     public int HP = 100;
+    public float debuffSpeed = 0f;
 
     // Start is called before the first frame update
     void Start(){
@@ -17,7 +18,7 @@ public class EnemyGeneric : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-        this.rigidbody2d.velocity = Vector3.left * this.velocity * this.speedMultiplier;
+        this.rigidbody2d.velocity = Vector3.left * this.velocity * (this.speedMultiplier - debuffSpeed);
         if (this.transform.position.x < GameUtils.basePositionX){
             SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
             Destroy(gameObject);
@@ -29,6 +30,7 @@ public class EnemyGeneric : MonoBehaviour
         if (colliderObject.CompareTag("Projectile")){
             projectileBehaviour projectileBehaviourComponent = colliderObject.GetComponent<projectileBehaviour>();
             projectileBehaviourComponent.penetrationCount -= 1;
+            debuffSpeed = projectileBehaviourComponent.debuffSpeed;
             this.HP -= projectileBehaviourComponent.damage;
             if(projectileBehaviourComponent.penetrationCount < 0){
                 Destroy(colliderObject);
