@@ -5,6 +5,8 @@ using UnityEngine;
 public class projectile_behaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public float projectileSpeed = 2f;
+    public int damage = 25;
 
     void Awake(){
         rb = this.gameObject.AddComponent<Rigidbody2D>() as Rigidbody2D;
@@ -18,6 +20,6 @@ public class projectile_behaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(3f, 0.0f);
+        rb.velocity = new Vector2(projectileSpeed, 0.0f);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Goblin : MonoBehaviour
@@ -7,6 +8,8 @@ public class Goblin : MonoBehaviour
 
     Rigidbody2D rigidbody2d;
     public float velocity;
+
+    public int HP = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +20,21 @@ public class Goblin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         this.rigidbody2d.velocity = Vector3.left * this.velocity;
+        if (this.transform.position.x < GameUtils.basePositionX)
+        {
+            Destroy(gameObject);
+        }
+    }
 
+    void OnTriggerEnter2D(Collider2D other) {
+        GameObject colliderObject = other.gameObject;
+        if (colliderObject.CompareTag("Projectile")){
+            this.HP -= colliderObject.GetComponent<projectile_behaviour>().damage;
+            Destroy(colliderObject);
+            if (HP <= 0){
+                Destroy(gameObject);
+            }
+        }
     }
 }

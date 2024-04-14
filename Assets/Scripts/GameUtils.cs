@@ -5,6 +5,6 @@ using UnityEngine;
 public static class GameUtils
 {
 
-    public static float basePositionX = 9.5f;
+    public static float basePositionX = -1f;
 
 }

@@ -1,42 +1,94 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using System;
+using System.Reflection;
+using System.Collections;
+using static UnityEditor.Progress;
+
+[Serializable]
+public class EnemyListStruc
+{
+    public List<GameObject> EnemyList;
+}
 
 public class EnemyGenerator : MonoBehaviour
 {
 
-    private float generatePositionX = 10;
-    private float[] generatePositionY = { 2.1f, 0.16f, -1.67f, -3.59f };
-    private List<GameObject> enemies = new List<GameObject>();
-    public List<GameObject> enemiesLVL1 = new List<GameObject>();
+    private float generatePositionX = 19.30f;
+    private float[] generatePositionY = { 2.47f, 0.79f, -0.84f, -2.47f };
     private float timerSpawn = 0f;
-    public float respawnTime = 4f;
+    private float timerRound = 0f;
+    private List<EnemyListStruc> enemies = new List<EnemyListStruc>();
+    private int currentRound = 1;
+    private float[] differentsRespawnTime = { 10f, 9f, 8f, 7f, 6f };
+    private int respawnTimeIndex = 0;
+
+    public List<EnemyListStruc> enemiesLVL1 = new List<EnemyListStruc>();
+    public float roundTime = 30f;
+    public TextMeshProUGUI textRound;
 
     void Start()
     {
         this.enemies.AddRange(enemiesLVL1);
+        InstanciateRandomEnemyList();
+        textRound.text = "Ronda: " + this.currentRound;
+        respawnTimeIndex = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         this.timerSpawn += Time.deltaTime;
-        if (timerSpawn > respawnTime)
+        this.timerRound += Time.deltaTime;
+        if (timerSpawn > differentsRespawnTime[respawnTimeIndex])
         {
-            timerSpawn -= respawnTime; //This is so it doesn't lose a few miliseconds every spawn
-            Instantiate(this.GetRandomEnemy(), new Vector3(generatePositionX, this.GetRandomPosition(), 0f), Quaternion.identity);
+            timerSpawn -= differentsRespawnTime[respawnTimeIndex]; //This is so it doesn't lose a few miliseconds every spawn
+            InstanciateRandomEnemyList();
+        }
+        if (timerRound > roundTime)
+        {
+            if (currentRound % 5 == 0)
+            {
+                respawnTimeIndex = 0;
+            }
+            else
+            {
+                respawnTimeIndex += 1;
+            }
+            timerRound -= roundTime;
+            this.currentRound += 1;
+            textRound.text = "Ronda: " + this.currentRound;
+            Debug.Log(differentsRespawnTime[respawnTimeIndex]);
         }
     }
 
-    private GameObject GetRandomEnemy()
+    void InstanciateRandomEnemyList()
+    {
+        List<GameObject> enemiesItems = this.enemies[GetRandomEnemyIndex()].EnemyList;
+        float seconds = 0;
+        foreach (GameObject item in enemiesItems)
+        {
+            StartCoroutine(InstantiatePrefabWithDelay(item, seconds));
+            seconds += 1.3f;
+        }
+    }
+
+    private int GetRandomEnemyIndex()
     {
         int index = UnityEngine.Random.Range(0, this.enemies.Count);
-        return this.enemies[index];
+        return index;
     }
 
     private float GetRandomPosition()
     {
         int index = UnityEngine.Random.Range(0, this.generatePositionY.Length);
         return this.generatePositionY[index];
+    }
+
+    IEnumerator InstantiatePrefabWithDelay(GameObject enemyItem,float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Instantiate(enemyItem, new Vector3(generatePositionX, this.GetRandomPosition(), 0f), Quaternion.identity);
     }
 }
