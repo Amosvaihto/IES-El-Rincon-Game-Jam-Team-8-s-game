@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyGeneric : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class EnemyGeneric : MonoBehaviour
     void Update(){
         this.rigidbody2d.velocity = Vector3.left * this.velocity * this.speedMultiplier;
         if (this.transform.position.x < GameUtils.basePositionX){
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
             Destroy(gameObject);
         }
     }

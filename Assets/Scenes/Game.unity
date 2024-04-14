@@ -1779,6 +1779,8 @@ MonoBehaviour:
     prefab: {fileID: 7318255694221668149, guid: 64bcac1643b9771429c5d1f173a16251, type: 3}
   - name: knight
     prefab: {fileID: 1063459617685767230, guid: cc4a50c56a40b1e49b149b59c929de17, type: 3}
+  - name: wizard
+    prefab: {fileID: 2055181652795240448, guid: fe1e03dae9da1424db5c4d4e4f56de52, type: 3}
   secondsPerOneMana: 0.3
 --- !u!4 &952183635
 Transform:
@@ -4053,7 +4055,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: bat
+          m_StringArgument: wizard
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2077674279
