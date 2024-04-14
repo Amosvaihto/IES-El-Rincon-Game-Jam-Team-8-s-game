@@ -14,11 +14,13 @@ public class shooterSummonedBehaviour : MonoBehaviour
     public float projectileSizeY = 0.2f;
     public int penetrationCount = 0;
     public float debuffSpeed = 0f;
+    private AudioSource effectShoot;
 
     // Start is called before the first frame update
     void Start(){
         timePerProjectile = this.gameObject.GetComponent<summonedBehaviour>().timePerHit;
         damage = this.gameObject.GetComponent<summonedBehaviour>().damage;
+        effectShoot = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class shooterSummonedBehaviour : MonoBehaviour
             leprojectile.transform.localScale = new Vector3(projectileSizeX, projectileSizeY, 1f);
             leprojectile.GetComponent<projectileBehaviour>().penetrationCount = penetrationCount;
             leprojectile.GetComponent<projectileBehaviour>().debuffSpeed = debuffSpeed;
+            effectShoot.PlayOneShot(effectShoot.clip);
         }
 
 
