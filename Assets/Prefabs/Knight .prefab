@@ -291,7 +291,7 @@ MonoBehaviour:
   projectileSpeed: 10
   projectileSizeX: 0.5
   projectileSizeY: 0.5
-  penetrationCount: 4
+  penetrationCount: 2
   debuffSpeed: 0
 --- !u!114 &-8891799080958568662
 MonoBehaviour:
