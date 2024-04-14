@@ -20,11 +20,11 @@ public class Goblin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         this.rigidbody2d.velocity = Vector3.left * this.velocity;
-
-
-
+        if (this.transform.position.x < GameUtils.basePositionX)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -33,10 +33,8 @@ public class Goblin : MonoBehaviour
             this.HP -= colliderObject.GetComponent<projectile_behaviour>().damage;
             Destroy(colliderObject);
             if (HP <= 0){
-                Debug.Log("aaaaaaaaagh");
                 Destroy(gameObject);
             }
-            Debug.Log("ay");
         }
     }
 }
