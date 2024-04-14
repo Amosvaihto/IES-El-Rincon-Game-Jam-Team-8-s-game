@@ -33,7 +33,10 @@ public class EnemyGeneric : MonoBehaviour
         if (colliderObject.CompareTag("Projectile")){
             projectileBehaviour projectileBehaviourComponent = colliderObject.GetComponent<projectileBehaviour>();
             projectileBehaviourComponent.penetrationCount -= 1;
-            debuffSpeed = projectileBehaviourComponent.debuffSpeed;
+            if (debuffSpeed > projectileBehaviourComponent.debuffSpeed)
+            {
+                debuffSpeed = projectileBehaviourComponent.debuffSpeed;
+            }
             this.currentHP -= projectileBehaviourComponent.damage;
             if(projectileBehaviourComponent.penetrationCount < 0){
                 Destroy(colliderObject);

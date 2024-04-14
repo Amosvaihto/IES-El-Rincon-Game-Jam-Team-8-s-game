@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 34
   timePerHit: 2
-  manaCost: 35
+  manaCost: 30
   despawnTime: 15
 --- !u!82 &8090925359907046946
 AudioSource:
