@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI selectedCreatureText;
     public TextMeshProUGUI manaText;
     public List<CreatureItemStruct> creatureItems;
-    public float timerPerOneMana = 0f;
+    private float timerPerOneMana = 0f;
     public float secondsPerOneMana = 0.5f;
 
     private void Start()
