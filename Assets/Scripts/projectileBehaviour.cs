@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class projectile_behaviour : MonoBehaviour
+public class projectileBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float projectileSpeed = 2f;
@@ -15,11 +15,6 @@ public class projectile_behaviour : MonoBehaviour
     {
         rb.angularDrag = 0;
         rb.gravityScale = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         rb.velocity = new Vector2(projectileSpeed, 0.0f);
     }
 
