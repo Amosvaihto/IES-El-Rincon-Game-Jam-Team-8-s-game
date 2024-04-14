@@ -2,9 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
-using System.Reflection;
 using System.Collections;
-using static UnityEditor.Progress;
 
 [Serializable]
 public class EnemyListStruc
@@ -16,7 +14,7 @@ public class EnemyGenerator : MonoBehaviour
 {
 
     private float generatePositionX = 19.30f;
-    private float[] generatePositionY = { 2.47f, 0.79f, -0.84f, -2.47f };
+    private float[] generatePositionY = { 3.01f, 1.37f, -0.29f, -2.06f };
     private float timerSpawn = 0f;
     private float timerRound = 0f;
     private List<EnemyListStruc> enemies = new List<EnemyListStruc>();
