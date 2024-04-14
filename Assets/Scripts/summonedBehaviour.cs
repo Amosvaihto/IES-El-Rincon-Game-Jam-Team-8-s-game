@@ -7,7 +7,7 @@ public class summonedBehaviour : MonoBehaviour
     private float dTimer = 0;
     public int damage = 25;
     public float timePerHit = 2f;
-    public float manaCost = 25f;
+    public int manaCost = 25;
     public float despawnTime = 15f;
 
     void Update(){
