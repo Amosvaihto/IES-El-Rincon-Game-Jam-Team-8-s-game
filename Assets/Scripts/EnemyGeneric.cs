@@ -4,23 +4,36 @@ using UnityEngine;
 
 public class EnemyGeneric : MonoBehaviour
 {
+    private Rigidbody2D rigidbody2d;
+    public float velocity;
+    public float speedMultiplier = 1f;
+    public int HP = 100;
+
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start(){
+        this.rigidbody2d = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update(){
+        this.rigidbody2d.velocity = Vector3.left * this.velocity * this.speedMultiplier;
+        if (this.transform.position.x < GameUtils.basePositionX){
+            Destroy(gameObject);
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("summoned"))
-        {
-            Destroy(collision.gameObject);
+    void OnTriggerEnter2D(Collider2D other) {
+        GameObject colliderObject = other.gameObject;
+        if (colliderObject.CompareTag("Projectile")){
+            Debug.Log("Duele vivir");
+            this.HP -= colliderObject.GetComponent<projectileBehaviour>().damage;
+            Destroy(colliderObject);
+            if (HP <= 0){
+                Destroy(gameObject);
+            }
+        }
+        if (colliderObject.gameObject.CompareTag("summoned")){
+            Destroy(colliderObject.gameObject);
         }
     }
 }
