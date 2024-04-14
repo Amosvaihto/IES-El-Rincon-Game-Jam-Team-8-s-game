@@ -185,7 +185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Criatura seleccionada: XX'
+  m_text: 'Criaturas seleccionadas:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d66c26cf789a7bd4f841e44b2fee3ab2, type: 2}
   m_sharedMaterial: {fileID: 8155684352726341182, guid: d66c26cf789a7bd4f841e44b2fee3ab2, type: 2}
@@ -1777,7 +1777,9 @@ MonoBehaviour:
   creatureItems:
   - name: bat
     prefab: {fileID: 7318255694221668149, guid: 64bcac1643b9771429c5d1f173a16251, type: 3}
-  secondsPerOneMana: 0.5
+  - name: knight
+    prefab: {fileID: 1063459617685767230, guid: cc4a50c56a40b1e49b149b59c929de17, type: 3}
+  secondsPerOneMana: 0.3
 --- !u!4 &952183635
 Transform:
   m_ObjectHideFlags: 0
@@ -2034,7 +2036,7 @@ MonoBehaviour:
   - EnemyList:
     - {fileID: 6002565151702295468, guid: e756c97ed0dd67e459c9e75b91580a64, type: 3}
     - {fileID: 6002565151702295468, guid: e756c97ed0dd67e459c9e75b91580a64, type: 3}
-  roundTime: 30
+  roundTime: 5
   textRound: {fileID: 1311413400}
 --- !u!1 &1200511582
 GameObject:
@@ -2300,7 +2302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Rondas: XX'
+  m_text: 'Rounds:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d66c26cf789a7bd4f841e44b2fee3ab2, type: 2}
   m_sharedMaterial: {fileID: 8155684352726341182, guid: d66c26cf789a7bd4f841e44b2fee3ab2, type: 2}
@@ -2817,7 +2819,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: bat
+          m_StringArgument: knight
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1552941849
@@ -3758,8 +3760,8 @@ Transform:
   m_GameObject: {fileID: 1988219724}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 22, z: -9719.224}
-  m_LocalScale: {x: 39.996807, y: 39.996807, z: 107.99138}
+  m_LocalPosition: {x: -7, y: 22, z: -9719.224}
+  m_LocalScale: {x: 75, y: 75, z: 107.99138}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2077674277}
@@ -3805,7 +3807,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 555
-  m_Sprite: {fileID: 1471572056, guid: 7d5421c3e6862f047a80f61ccf6850c0, type: 3}
+  m_Sprite: {fileID: -531332912, guid: 9c38ebd96585f5e47ac057a23ce19a4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
