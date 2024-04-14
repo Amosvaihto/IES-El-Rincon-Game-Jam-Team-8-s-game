@@ -203,6 +203,8 @@ MonoBehaviour:
   projectileSpeed: 6
   projectileSizeX: 0.2
   projectileSizeY: 0.2
+  penetrationCount: 0
+  debuffSpeed: 0.4
 --- !u!114 &7010257938149188387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,8 +219,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 25
   timePerHit: 2
-  manaCost: 25
-  despawnTime: 20
+  manaCost: 40
+  despawnTime: 30
 --- !u!1 &4759009504401258499
 GameObject:
   m_ObjectHideFlags: 0
