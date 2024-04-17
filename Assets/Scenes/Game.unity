@@ -162,8 +162,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200.57, y: -443.24}
-  m_SizeDelta: {x: 625.68, y: 46.93}
+  m_AnchoredPosition: {x: -772.54, y: 462}
+  m_SizeDelta: {x: 317.96, y: 115.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &57123660
 MonoBehaviour:
@@ -185,7 +185,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Criaturas seleccionadas:'
+  m_text: 'Criaturas
+
+    seleccionadas:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d66c26cf789a7bd4f841e44b2fee3ab2, type: 2}
   m_sharedMaterial: {fileID: 8155684352726341182, guid: d66c26cf789a7bd4f841e44b2fee3ab2, type: 2}
@@ -1348,8 +1350,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -70.26996, y: 481.94998}
-  m_SizeDelta: {x: -1293.3, y: -963.89}
+  m_AnchoredPosition: {x: -95, y: 481.95}
+  m_SizeDelta: {x: -1325.31, y: -963.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &678873869
 MonoBehaviour:
@@ -1364,7 +1366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.13932894, g: 0.7687149, b: 0.9528302, a: 0.8862745}
+  m_Color: {r: 0.5773585, g: 0.5773585, b: 0.5773585, a: 0.8862745}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1762,8 +1764,8 @@ Transform:
   m_GameObject: {fileID: 854311335}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.899, y: -0.0054, z: 0}
-  m_LocalScale: {x: 0.9240991, y: 0.9251319, z: 1}
+  m_LocalPosition: {x: 8.8762, y: -0.0054, z: 0}
+  m_LocalScale: {x: 0.9265017, y: 0.9251319, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1909,7 +1911,10 @@ MonoBehaviour:
     prefab: {fileID: 1063459617685767230, guid: cc4a50c56a40b1e49b149b59c929de17, type: 3}
   - name: wizard
     prefab: {fileID: 2055181652795240448, guid: fe1e03dae9da1424db5c4d4e4f56de52, type: 3}
-  secondsPerOneMana: 0.2
+  secondsPerOneMana: 0.35
+  Round: {fileID: 1311413400}
+  LastRound: 
+  ManaPerRound: 0
 --- !u!4 &952183635
 Transform:
   m_ObjectHideFlags: 0
@@ -1959,7 +1964,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 713, y: 456}
+  m_AnchoredPosition: {x: 701, y: 462}
   m_SizeDelta: {x: 241.89, y: 72.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1063043666
@@ -2438,7 +2443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 585, y: -458}
+  m_AnchoredPosition: {x: 543, y: -490}
   m_SizeDelta: {x: 335.15, y: 45.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1311413400

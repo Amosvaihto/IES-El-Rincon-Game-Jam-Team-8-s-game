@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
@@ -23,6 +24,10 @@ public class PlayerController : MonoBehaviour
     public List<CreatureItemStruct> creatureItems;
     private float timerPerOneMana = 0f;
     public float secondsPerOneMana = 0.5f;
+   
+    public TextMeshProUGUI Round;
+    public string LastRound = null;
+    public float ManaPerRound = 0f;
 
     private void Start()
     {
@@ -45,12 +50,16 @@ public class PlayerController : MonoBehaviour
                     Transform hitTransform = hitGameObject.transform;
                     Instantiate(creature, new Vector2(hitTransform.position.x, hitTransform.position.y), Quaternion.identity, hitTransform);
                     mana -= summonedComponent.manaCost;
-                    UpdateManaText();
+                         UpdateManaText();
+                         CheckRound(Round.text);
+
                 }
             }
         }
 
-        timerPerOneMana += Time.deltaTime;
+        
+
+        timerPerOneMana += Time.deltaTime + ManaPerRound;
         if (timerPerOneMana > secondsPerOneMana)
         {
             mana += 1;
@@ -60,6 +69,15 @@ public class PlayerController : MonoBehaviour
             }
             timerPerOneMana -= secondsPerOneMana;
             UpdateManaText();
+        }
+    }
+//new test when rounds go by the money grows by the manaperround
+    void CheckRound(string Round)
+    {
+        if (LastRound != Round)
+        {
+            LastRound = Round;
+            ManaPerRound += 0.0005f;
         }
     }
 
