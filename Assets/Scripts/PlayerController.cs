@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -24,11 +25,16 @@ public class PlayerController : MonoBehaviour
     public List<CreatureItemStruct> creatureItems;
     private float timerPerOneMana = 0f;
     public float secondsPerOneMana = 0.5f;
-   
-    public TextMeshProUGUI Round;
-    public string LastRound = null;
-    public float ManaPerRound = 0f;
 
+    public TextMeshProUGUI roundtitle;
+    private int currentRound = 0;
+    public float title = 10f;
+    // round 
+    
+    public TextMeshProUGUI Round;
+    private string LastRound = null;
+    private float ManaPerRound = 0f;
+    public float counter = 3f;
     private void Start()
     {
         UpdateManaText();
@@ -71,14 +77,34 @@ public class PlayerController : MonoBehaviour
             UpdateManaText();
         }
     }
-//new test when rounds go by the money grows by the manaperround
-    void CheckRound(string Round)
+
+    //new test when rounds go by the money grows by the manaperround
+     void CheckRound(string Round)
     {
         if (LastRound != Round)
         {
             LastRound = Round;
             ManaPerRound += 0.0005f;
+            this.currentRound++;
         }
+        float counter = 3f;
+
+        if (counter == 0) {
+            roundtitle.gameObject.SetActive(false);
+        }
+        else
+        {
+            counter -= Time.deltaTime;
+        }
+        if (this.currentRound % 10 == 0)
+        {
+             roundtitle.gameObject.SetActive(true);
+            roundtitle.text = "RONDA: " + this.currentRound;
+            counter = 3f;
+            
+            
+        }
+
     }
 
     void UpdateManaText()
